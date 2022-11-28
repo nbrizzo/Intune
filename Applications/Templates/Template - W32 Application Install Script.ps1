@@ -10,7 +10,7 @@ Script checks if temp directory exists and creates if it does not. Script then i
 
 Rename Script to Install.ps1 when finished editing variables.
 #>
-$TempDirectory = "C:\Windows\Temp"
+$TempDirectory = "C:\Temp"
 $TempExists = Test-Path $TempDirectory 
 $Installer = "<Path to installer>"
 
