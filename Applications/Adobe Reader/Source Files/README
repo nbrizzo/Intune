@@ -1,3 +1,3 @@
-Post source files for use in packaging Installer.intunewin
+Download the .exe at the following URL, make sure to update the Install.ps1 with the correct file name.
 
-If installation file is too large leave a link to the download.
+https://get.adobe.com/reader/enterprise/
