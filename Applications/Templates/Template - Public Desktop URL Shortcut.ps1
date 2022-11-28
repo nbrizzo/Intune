@@ -1,7 +1,8 @@
 ﻿<#
-Created by Nick Brizzolara
-
 .SYNOPSIS
+Created by Nick Brizzolara
+Created on 11/27/2022
+
 Create a Public Desktop URL Shortcut
 
 #>
