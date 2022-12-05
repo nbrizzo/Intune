@@ -1,0 +1,5 @@
+Rule Type: File
+Path: C:\Program Files\Google\Chrome\Application
+File or folder: Chrome.exe
+Detection Methos: File or folder exists
+Associate with 32-bit app on 64-bit Clients: No
