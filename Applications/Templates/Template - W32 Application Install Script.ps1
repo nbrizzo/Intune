@@ -13,14 +13,14 @@ $TempDirectory = "C:\Windows\Temp"
 $TempExists = Test-Path $TempDirectory 
 $Installer = "<Path to installer>"
 
-If ($TempExists -eq $false) {
+If ($TempExists -eq $false){
 
     New-Item $TempDirectory -ItemType Directory
 
-    elseif ($TempExists -eq $true) {
-        Write-Host "Temp Directory Already Exists"
-    }{
     }
-}
+    elseif($TempExists -eq $true) {
+        Write-Host "Temp Directory Already Exists"
+    }
+    
 
 msiexec /i $Installer /qn /L*v "C:\Temp\LogName.Log"
