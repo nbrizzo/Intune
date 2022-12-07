@@ -1,4 +1,4 @@
-You must edit Install.ps1 with the parameters of your labtech agent.
+You must edit Install Command.txt with the parameters of your labtech agent.
 
 If you are unsure of the required parameters run your labtech installer on a machine and note down the Server Address, Server Password & location ID.
 
