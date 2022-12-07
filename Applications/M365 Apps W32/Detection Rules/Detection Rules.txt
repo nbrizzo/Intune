@@ -1,0 +1,5 @@
+Rule Type: Registry
+Key Path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration
+Value Name:
+Detection Methos: Key Exists
+Associate with 32-bit app on 64-bit Clients: No
