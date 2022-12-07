@@ -1,5 +1,5 @@
-Rule Type: File
-Path: C:\Program Files\Google\Chrome\Application
-File or folder: Chrome.exe
-Detection Methos: File or folder exists
+Rule Type: Registry
+Key Path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe
+Value Name:
+Detection Methos: Key Exists
 Associate with 32-bit app on 64-bit Clients: No
