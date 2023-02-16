@@ -27,11 +27,7 @@ If ($TempExists -eq $false) {
 
 $Installer = New-Object -ComObject WindowsInstaller.Installer 
 $InstallerProducts = $Installer.ProductsEx("", "", 7)
-$InstalledProducts = ForEach($Product in $InstallerProducts){[PSCustomObject]@{ProductCode = $Product.ProductCode()
-LocalPackage = $Product.InstallProperty("LocalPackage")
-VersionString = $Product.InstallProperty("VersionString")
-ProductPath = $Product.InstallProperty("ProductName")}}
-
+$InstalledProducts = ForEach($Product in $InstallerProducts){[PSCustomObject]@{ProductCode = $Product.ProductCode() ;LocalPackage = $Product.InstallProperty("LocalPackage") ;VersionString = $Product.InstallProperty("VersionString") ;ProductPath = $Product.InstallProperty("ProductName")}} 
 
 $UninstallCode = $InstalledProducts | Where-Object ProductPath -like "Google Chrome" | Select-Object ProductCode
 #Output is passed as a dirty string and needs to be trimmed twice.
