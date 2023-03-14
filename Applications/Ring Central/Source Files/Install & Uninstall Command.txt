@@ -1,0 +1,2 @@
+Install: msiexec /i "RingCentral-x64.msi" /qn /L*v "C:\RingCentral.Log"
+Uninstall: powershell.exe -ExecutionPolicy Bypass -file Uninstall.ps1
