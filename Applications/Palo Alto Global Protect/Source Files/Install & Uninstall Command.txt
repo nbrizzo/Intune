@@ -1,0 +1,2 @@
+Install: msiexec /i "GlobalProtect64.msi" /qn  /L*v "C:\PAGlobalProtectInstall.Log"
+Uninstall: powershell.exe -ExecutionPolicy Bypass -file Uninstall.ps1
