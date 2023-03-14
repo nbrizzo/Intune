@@ -37,4 +37,4 @@ $UninstallCode1 = $UninstallCode -replace "@{ProductCode="
 $TrueUninstallCode = $pattern2.Replace($UninstallCode1,"",1)
 
 #MSIExec silently uninstalls and logs to temp.
-msiexec /x $TrueUninstallCode /qn /l*v "C:\Temp\Uninstall.Log"
+msiexec /x $TrueUninstallCode /qn /l*v "C:\Temp\PAGlobalProtectUninstall.Log"
