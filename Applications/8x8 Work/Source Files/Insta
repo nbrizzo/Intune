@@ -1,0 +1,1 @@
+msiexec /i "Install.msi" /qn  /L*v "C:\8x8Install.Log"
