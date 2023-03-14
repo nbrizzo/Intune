@@ -1,0 +1,5 @@
+Rule Type: File
+Path: C:\Program Files (x86)\CAMA Software\QCBD Premier Enterprise\bin\
+Value Name: QCBD_Premier.exe
+Detection Methos: File or folder exists
+Associate with 32-bit app on 64-bit Clients: No
