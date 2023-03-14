@@ -1,0 +1,5 @@
+Rule Type: File
+Key Path: C:\Program Files\RingCentral\
+Value Name: RingCentral.exe
+Detection Methos: File or folder exists
+Associate with 32-bit app on 64-bit Clients: No
