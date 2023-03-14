@@ -1,0 +1,5 @@
+Rule Type: File
+Path: C:\Program Files\8x8 Inc\8x8 Work\
+File or folder: 8x8 Work.exe
+Detection Method: File or folder exists
+Associated with a 32-bit app on 64-bit client: No
