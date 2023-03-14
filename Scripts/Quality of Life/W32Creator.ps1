@@ -6,6 +6,10 @@ Script automatically runs IntuneWinAppUtil to package W32 apps.
 
 .DESCRIPTION
 
+This script will automatically create a W32 application from objects in the "C:\Source_Files" directory and output them to the "C:\Output_Files" directory
+
+This script must be run from VSCode or ISE, there is an issue with the script actually starting the process for the W32 app utility.
+
 #>
 
 #Static Variables
@@ -23,9 +27,7 @@ If ($SourceExists -eq $False) {
     elseif ($SourceExists -eq $True) {
         Write-Host "Path already exists"
         }
-
 If ($OutputeExists -eq $false) {
-
     New-Item $OutputDirectory -ItemType Directory
 }
     elseif ($OutputExists -eq $true) {
@@ -34,14 +36,30 @@ If ($OutputeExists -eq $false) {
 
 #Check if their are multiple installation files in the source directory, if there are then you must manually specify which file to use.
 If ($InstallFiles.Count -eq 1){
+    try {
+        Start-Process -FilePath C:\IntuneWinAppUtil.exe -ArgumentList $arguments
+        Write-Host "Creating Intunewin file for $($InstallFiles.Name)"
+    }
+    catch {
+        Write-Host "An error occured, please validate your inputs and try again."
+        Exit
+    }
+}
+ElseIf ($installfiles.count -ge 2) {
     
-    Start-Process -FilePath C:\IntuneWinAppUtil.exe -ArgumentList $arguments
+    try {
+        Write-Host "Too many installers are present in the directory, please specify the installer you wish to use."
+        Write-Host $InstallFiles.Name
+        $installfile = Read-Host -Prompt "Please enter the filename you wish you use"
+        $arguments = "-c $($SourceDirectory)" + " -s $($InstallFile)" + " -o $($OutputDirectory)"
+        Start-Process -FilePath C:\IntuneWinAppUtil.exe -ArgumentList $arguments
+        Write-Host "Creating Intunewin file for $($InstallFile)"
+     }
+    catch {
+        Write-Host "An error occured, please validate your input and try again."
+        Exit
+    }
+
 }
-Elseif ($installfiles.count -ge 2) {
-   Write-Host "Too many installers are present in the directory, please specify the installer you wish to use."
-   Write-Host $InstallFiles.Name
-   $installfile = Read-Host
-   $arguments = "-c $($SourceDirectory)" + " -s $($InstallFile)" + " -o $($OutputDirectory)"
-   Start-Process -FilePath C:\IntuneWinAppUtil.exe -ArgumentList $arguments
-}
+
 
