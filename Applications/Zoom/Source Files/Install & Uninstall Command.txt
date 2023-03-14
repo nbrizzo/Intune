@@ -1,0 +1,2 @@
+Install: msiexec /i "ZoomInstallerFull.msi" /qn /L*v "C:\ZoomInstall.Log"
+Uninstall: powershell.exe -ExecutionPolicy Bypass -file Uninstall.ps1
