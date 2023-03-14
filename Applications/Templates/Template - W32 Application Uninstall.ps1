@@ -25,16 +25,11 @@ If ($TempExists -eq $false) {
     }
 }
 
-#Run this part manually when trying to find the GUID for uninstalling the app for testing.
 $Installer = New-Object -ComObject WindowsInstaller.Installer 
 $InstallerProducts = $Installer.ProductsEx("", "", 7)
-$InstalledProducts = ForEach($Product in $InstallerProducts){[PSCustomObject]@{ProductCode = $Product.ProductCode()
-LocalPackage = $Product.InstallProperty("LocalPackage")
-VersionString = $Product.InstallProperty("VersionString")
-ProductPath = $Product.InstallProperty("ProductName")}}
-#Manually call $InstalledProducts and find the ProductName that you will be using to set $UninstallCode
+$InstalledProducts = ForEach($Product in $InstallerProducts){[PSCustomObject]@{ProductCode = $Product.ProductCode() ;LocalPackage = $Product.InstallProperty("LocalPackage") ;VersionString = $Product.InstallProperty("VersionString") ;ProductPath = $Product.InstallProperty("ProductName")}} 
 
-$UninstallCode = $InstalledProducts | Where-Object ProductPath -like "<product name>" | Select-Object ProductCode
+$UninstallCode = $InstalledProducts | Where-Object ProductPath -like "CHANGE ME" | Select-Object ProductCode
 #Output is passed as a dirty string and needs to be trimmed twice.
 $UninstallCode1 = $UninstallCode -replace "@{ProductCode="
 #Second trim requires a regex to remove only the first instance of "}" since there are 2 at the end of the first trim.
@@ -42,5 +37,4 @@ $UninstallCode1 = $UninstallCode -replace "@{ProductCode="
 $TrueUninstallCode = $pattern2.Replace($UninstallCode1,"",1)
 
 #MSIExec silently uninstalls and logs to temp.
-msiexec /x $TrueUninstallCode /qn /l*v "C:\Temp\Uninstall.Log"
-
+msiexec /x $TrueUninstallCode /qn /l*v "C:\Temp\ApplicationUninstall.Log"
