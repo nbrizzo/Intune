@@ -1,0 +1,2 @@
+Install: msiexec /i "Install.msi" /qn  /L*v "C:\8x8Install.Log"
+Uninstall: powershell.exe -ExecutionPolicy Bypass -file Uninstall.ps1
