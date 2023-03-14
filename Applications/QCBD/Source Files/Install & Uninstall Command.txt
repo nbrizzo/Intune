@@ -1,0 +1,2 @@
+Install: msiexec /i "QCBD.msi" /qn  /L*v "C:\QCBDInstall.Log"
+Uninstall: powershell.exe -ExecutionPolicy Bypass -file Uninstall.ps1
