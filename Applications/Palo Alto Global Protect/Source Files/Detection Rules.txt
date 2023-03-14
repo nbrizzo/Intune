@@ -1,0 +1,5 @@
+Rule Type: Registry
+Key Path: HKEY_LOCAL_MACHINE\SOFTWARE\Palo Alto Networks\GlobalProtect
+Value Name:
+Detection Methos: Key Exists
+Associate with 32-bit app on 64-bit Clients: No
