@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
 Created By Nick Brizzolara
-Created on 11/27/2022
+Created on 3/14/2023
 
 Script grabs GUID of software and calls MSIExec to silently uninstall
 
