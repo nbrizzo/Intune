@@ -6,10 +6,6 @@ Script automatically runs IntuneWinAppUtil to package W32 apps.
 
 .DESCRIPTION
 
-This script will automatically create a W32 application from objects in the "C:\Source_Files" directory and output them to the "C:\Output_Files" directory
-
-This script must be run from VSCode or ISE, there is an issue with the script actually starting the process for the W32 app utility.
-
 #>
 
 #Static Variables
@@ -17,7 +13,7 @@ $OutputDirectory = "C:\Output_Files"
 $SourceDirectory = "C:\Source_Files"
 $SourceExists = Test-Path $SourceDirectory 
 $OutputExists = Test-Path $OutputDirectory 
-$InstallFiles = Get-ChildItem -Path $SourcePath | Where-Object {$_.Name -like '*.MSI' -or $_.Name -like '*.exe'}
+$InstallFiles = Get-ChildItem -Path $SourceDirectory | Where-Object {$_.Name -like '*.MSI' -or $_.Name -like '*.exe'}
 $arguments = "-c $($SourceDirectory)" + " -s $($InstallFiles.Name)" + " -o $($OutputDirectory)"
 
 #Check if Source & Output directories exist, if not then create them.
