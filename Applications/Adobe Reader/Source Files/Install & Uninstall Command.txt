@@ -1,2 +1,2 @@
-Install: AcroRdrDC2200320322_en_US.exe /sAll /rs /rps /msi /norestart /quiet EULA_ACCEPT=YES
+Install: AcroRdrDCx642300620320_MUI.exe /sAll /rs /rps /msi /norestart /quiet EULA_ACCEPT=YES
 Uninstall: powershell.exe -ExecutionPolicy Bypass -file Uninstall.ps1
