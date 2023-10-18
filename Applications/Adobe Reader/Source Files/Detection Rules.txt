@@ -1,5 +1,5 @@
 Rule Type: File
-Path: C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader
-File or folder: AcroRd32.exe
+Path: C:\Program Files\Adobe\Acrobat DC\Acrobat
+File or folder: Acrobat.exe
 Detection Methos: File or folder exists
 Associate with 32-bit app on 64-bit Clients: No
