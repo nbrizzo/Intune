@@ -1,0 +1,2 @@
+install: msiexec /i DellCommandUpdateApp.msi /qn
+uninstall: (leave default in win32 app.)
