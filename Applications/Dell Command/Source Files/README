@@ -1,1 +1,13 @@
+Dell command .msi is v5.0 from 7/29/23.
 
+To generate a new .msi for dell command download the latest version of Dell Command, it will be a .exe.
+
+Extract the "DellCommandUpdateApp_Setup.exe" from the .exe downloaded from Dell's website.
+
+Run the .exe you extracted, it will compile and launch a .msi.
+
+Find the process in task manager, right click it and open file location.
+
+Copy the .MSI to a new location and close the installer window.
+
+Package your intunewim with the .msi.
