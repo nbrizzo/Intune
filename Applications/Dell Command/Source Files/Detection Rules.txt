@@ -1,0 +1,5 @@
+Rule Type: File
+Path: C:\Program Files\Dell\CommandUpdate
+File or folder: dcu-cli.exe
+Detection Methos: File or folder exists
+Associate with 32-bit app on 64-bit Clients: No
